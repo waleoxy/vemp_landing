@@ -1,7 +1,8 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReactConfig from "eslint-plugin-react/configs/recommended.js";
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginReactConfig from 'eslint-plugin-react/configs/recommended.js';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   pluginJs.configs.recommended,
@@ -9,16 +10,18 @@ export default [
   ...tseslint.configs.stylistic,
   pluginReactConfig,
   {
-    ignores: [".eslintrc.cjs", "vite.config.ts"],
+    ignores: ['.eslintrc.cjs', 'vite.config.ts']
   },
   {
-    files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
-    rules: { "react/react-in-jsx-scope": "off", "react/jsx-uses-react": "off" },
+    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    rules: { 'react/react-in-jsx-scope': 'off', 'react/jsx-uses-react': 'off' },
     settings: {
       react: {
-        version: "detect",
-      },
-    },
+        version: 'detect'
+      }
+    }
   },
   { languageOptions: { globals: globals.browser } },
+
+  eslintConfigPrettier
 ];
