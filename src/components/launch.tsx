@@ -12,7 +12,7 @@ const Launch = () => {
               <h5 className="text-xl font-semibold text-[#352CAB] leading-[30px]">What are you waiting for?</h5>
               <h2 className="text-[40px] font-bold leading-[60px] text-[#0D121F] my-4">
                 Ready to transform your <br />
-                school's management experience?
+                school&apos;s management experience?
               </h2>
               <p className="text-xl leading-[30px] font-normal text-[#596780] max-w-[80%] mt-4">
                 Join the hundreds of schools already benefiting from Velonze. Elevate your school management to the next

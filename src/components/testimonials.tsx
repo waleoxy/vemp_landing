@@ -13,7 +13,7 @@ const Testimonials = () => {
           <div className="flex flex-col my-auto space-y-10 ">
             <div className="flex flex-col items-center space-y-3">
               <h5 className="text-xl font-semibold leading-[30px] text-[#352CAB]">Satisfied clientele</h5>
-              <h2 className="text-[40px] font-bold leading[60px] text-[#0D121F] ">Our Users' Kind Words</h2>
+              <h2 className="text-[40px] font-bold leading[60px] text-[#0D121F] ">Our Users&apos; Kind Words</h2>
               <h5 className="text-xl font-normal leading-[30px] text-[#596780] pt-4">What our users have to say</h5>
             </div>
             <div className="flex flex-col items-center space-y-12 mt-6 w-full">
@@ -22,9 +22,9 @@ const Testimonials = () => {
                   <div className=" max-w-[320px] max-h-[207px] flex flex-col space-y-3 items-start">
                     <h5 className="text-[18px] font-semibold leading-[27px] text-[#0D121F] ">Easy communication!</h5>
                     <p className="text-[16px] font-[500] leading-6 text-[#596780] ">
-                      As a parent, staying connected with my child's school has never been easier, thanks to Velonze. I
-                      can access real-time updates on grades, attendance, and upcoming events, keeping me informed and
-                      involved in my child's education every step of the way.
+                      As a parent, staying connected with my child&apos;s school has never been easier, thanks to
+                      Velonze. I can access real-time updates on grades, attendance, and upcoming events, keeping me
+                      informed and involved in my child&apos;s education every step of the way.
                     </p>
                   </div>
                   <div className="flex space-x-6 items-center">
@@ -39,9 +39,9 @@ const Testimonials = () => {
                   <div className=" max-w-[320px] max-h-[207px] flex flex-col space-y-3 items-start">
                     <h5 className="text-[18px] font-semibold leading-[27px] text-[#0D121F] ">Satisfied User Here!!</h5>
                     <p className="text-[16px] font-[500] leading-6 text-[#596780] ">
-                      I can't imagine managing our district without Velonze. The comprehensive analytics and reporting
-                      tools provide invaluable insights into student performance and school operations, empowering us to
-                      make data-driven decisions that positively impact our entire community.
+                      I can&apos;t imagine managing our district without Velonze. The comprehensive analytics and
+                      reporting tools provide invaluable insights into student performance and school operations,
+                      empowering us to make data-driven decisions that positively impact our entire community.
                     </p>
                   </div>
                   <div className="flex space-x-6 items-center">
@@ -58,7 +58,7 @@ const Testimonials = () => {
                   <div className=" max-w-[320px] max-h-[207px] flex flex-col space-y-3 items-start">
                     <h5 className="text-[18px] font-semibold leading-[27px] text-[#0D121F] ">Satisfied User Here!</h5>
                     <p className="text-[16px] font-[500] leading-6 text-[#596780] ">
-                      Implementing Velonze has been a game-changer for Maple Elementary. The platform's intuitive
+                      Implementing Velonze has been a game-changer for Maple Elementary. The platform&apos;s intuitive
                       interface and robust features have simplified our administrative tasks and improved communication
                       between teachers, parents, and students. Highly recommended!
                     </p>

@@ -11,7 +11,7 @@ const HeroSectionPage = () => {
             Goodbye admin headache. Hello smooth sailing.
           </h2>
           <p className="text-xl text-[#F5F5F5] mt-8 w-3/4 mx-auto text-center leading-[20px] tracking-wide">
-            Streamline your school's operations with our intuitive and comprehensive management solution.
+            Streamline your school&apos;s operations with our intuitive and comprehensive management solution.
           </p>
           <Button
             size={'lg'}

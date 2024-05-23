@@ -13,7 +13,7 @@ const DeliverablesPg = () => {
               Efficiency Meets Education
             </h3>
             <p className="text-clampxl font-normal leading[25.2px] text-[#596780] text-center pl-4">
-              From student enrollment to staff management, we've got you covered.
+              From student enrollment to staff management, we&apos;ve got you covered.
             </p>
           </div>
         </section>
