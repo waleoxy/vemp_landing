@@ -40,7 +40,6 @@ const ModalProvider = ({ children }: ModalProviderProps) => {
 
   const setClose = () => {
     setIsOpen(false);
-    window.location.reload();
   };
 
   if (!isMounted) return null;

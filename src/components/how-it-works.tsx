@@ -1,6 +1,5 @@
 import MaxWidthWrapper from './max-width-wrapper';
 import howItWorksImg from '../assets/images/howItWorks.png';
-import HocScroll from '@/hoc/hoc-scroll';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -74,4 +73,4 @@ const HowItWorksPg = () => {
   );
 };
 
-export default HocScroll(HowItWorksPg, 'howitworks');
+export default HowItWorksPg;

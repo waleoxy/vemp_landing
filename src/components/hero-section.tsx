@@ -3,11 +3,13 @@ import MaxWidthWrapper from './max-width-wrapper';
 import { Button } from './ui/button';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import HocScroll from '@/hoc/hoc-scroll';
+import { useModal } from '@/hook/useModal';
 
 const HeroSectionPage = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const { setOpen } = useModal();
 
   return (
     <div ref={ref} className=" bg-primary h-[792.97px]">
@@ -36,6 +38,7 @@ const HeroSectionPage = () => {
             Streamline your school&apos;s operations with our intuitive and comprehensive management solution.
           </p>
           <Button
+            onClick={() => setOpen()}
             size={'lg'}
             className={cn(
               'rounded-full h-[42px] text-base text-primary/10 w-[125px] bg-white hover:bg-white/90 font-semibold hover:bg-white hover:text-violet-900/80 mt-10 '
@@ -49,4 +52,4 @@ const HeroSectionPage = () => {
   );
 };
 
-export default HocScroll(HeroSectionPage, 'home');
+export default HeroSectionPage;

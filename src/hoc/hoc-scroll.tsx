@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { motion } from 'framer-motion';
 import { staggerContainer } from '../utils/framer-motion';
 import { FC } from 'react';

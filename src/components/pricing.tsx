@@ -4,10 +4,11 @@ import { Button } from './ui/button';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { pricingData } from '@/mock-data/pricing-data';
-import HocScroll from '@/hoc/hoc-scroll';
+import { useModal } from '@/hook/useModal';
 
 const Pricing = () => {
   const [current, setCurrent] = useState('basic');
+  const { setOpen } = useModal();
 
   const pricingFeatures = pricingData.find((pricing) => pricing.title === current);
 
@@ -89,10 +90,16 @@ const Pricing = () => {
                 </div>
 
                 <div className="flex flex-col w-full space-y-3">
-                  <Button className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-white bg-[#352CAB] hover:border hover:border-primary  hover:text-[#352CAB]">
+                  <Button
+                    onClick={setOpen}
+                    className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-white bg-[#352CAB] hover:border hover:border-primary  hover:text-[#352CAB]"
+                  >
                     Get started
                   </Button>
-                  <Button className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-[#352CAB] bg-[#DCDBEE] hover:border hover:border-primary">
+                  <Button
+                    onClick={setOpen}
+                    className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-[#352CAB] bg-[#DCDBEE] hover:border hover:border-primary"
+                  >
                     Chat to sales
                   </Button>
                 </div>
@@ -105,4 +112,4 @@ const Pricing = () => {
   );
 };
 
-export default HocScroll(Pricing, 'pricing');
+export default Pricing;

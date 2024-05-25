@@ -1,23 +1,23 @@
 import DashboardScreen from './components/dashboard-screen';
 import DeliverablesPg from './components/deliverables-pg';
 import Footer from './components/footer';
-import HeroSectionPage from './components/hero-section';
-import HowItWorksPg from './components/how-it-works';
 import Launch from './components/launch';
 import Contact from './components/modals';
 import NavbarComponent from './components/navbar-component';
-import Pricing from './components/pricing';
 import Testimonials from './components/testimonials';
+import { HeroPage } from './scroll-pages/hero-page';
+import { HowItWorksPage } from './scroll-pages/how-it-works-page';
+import { PricingPage } from './scroll-pages/pricing-page';
 
 function App() {
   return (
     <main className="relative flex flex-col w-screen h-full overflow-y-auto overflow-x-hidden">
       <NavbarComponent />
-      <HeroSectionPage />
+      <HeroPage />
       <DashboardScreen />
       <DeliverablesPg />
-      <HowItWorksPg />
-      <Pricing />
+      <HowItWorksPage />
+      <PricingPage />
       <Testimonials />
       <Launch />
       <Footer />
