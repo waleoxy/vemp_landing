@@ -1,15 +1,36 @@
 import MaxWidthWrapper from './max-width-wrapper';
 import howItWorksImg from '../assets/images/howItWorks.png';
+import HocScroll from '@/hoc/hoc-scroll';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const HowItWorksPg = () => {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref);
+
   return (
-    <div className="w-full h-full md:h-[788px] bg-[#F5F4FB] ">
+    <div ref={ref} className="overflow-x-hidden w-full h-full md:h-[788px] bg-[#F5F4FB] ">
       <MaxWidthWrapper className="flex mt-3 md:mt-0 md:items-center md:justify-center h-full ">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-12">
-          <div className="h-[68%]">
+          <div
+            style={{
+              transform: isInView ? 'none' : 'translateX(-200px)',
+              opacity: isInView ? 1 : 0,
+              transition: 'all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s'
+            }}
+            className="h-[68%]"
+          >
             <img src={howItWorksImg} alt="" className="object-contain" />
           </div>
-          <div className=" h-full md:h-[538px] flex flex-col w-full ml-6">
+          <div
+            style={{
+              transform: isInView ? 'none' : 'translateX(400px)',
+              opacity: isInView ? 1 : 0,
+              transition: 'all 1.5s cubic-bezier(0.17, 0.55, 0.55, 1) 0.7s'
+            }}
+            className=" h-full md:h-[538px] flex flex-col w-full ml-6"
+          >
             <div className="flex-1 flex flex-col items-start h-[228px]">
               <h5 className="text-xl font-semibold text-[#0B7077] leading-[30px]">How it works</h5>
               <h2 className="text-clamp4xl font-bold leading-tight md:leading-[60px] text-[#0D121F] my-4">
@@ -53,4 +74,4 @@ const HowItWorksPg = () => {
   );
 };
 
-export default HowItWorksPg;
+export default HocScroll(HowItWorksPg, 'howitworks');

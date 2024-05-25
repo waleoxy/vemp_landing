@@ -3,7 +3,7 @@ import velonzeLogo from '../assets/images/velonze-logo.svg';
 
 const Footer = () => {
   return (
-    <div className="bg-primary h-full md:h-[639.97px] py-8 md:py-6">
+    <div className=" bg-primary h-full md:h-[639.97px] py-8 md:py-6">
       <MaxWidthWrapper className="flex items-center   h-full ">
         <div className="w-full h-full flex flex-col justify-around items-center gap-y-10">
           <div className="justify-items-center grid grid-cols-2 gap-x-6 gap-y-8 md:h-[278px] md:mt-8 md:flex md:items-start md:justify-between w-full">

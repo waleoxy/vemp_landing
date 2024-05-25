@@ -1,8 +1,10 @@
 import MaxWidthWrapper from './max-width-wrapper';
 import launchimg from '../assets/images/launchimg.png';
 import { Button } from './ui/button';
+import { useModal } from '@/hook/useModal';
 
 const Launch = () => {
+  const { setOpen } = useModal();
   return (
     <div className="bg-white h-full py-6 md:py-0 md:h-[570px]">
       <MaxWidthWrapper className="h-full flex items-end ">
@@ -19,8 +21,11 @@ const Launch = () => {
                 level!
               </p>
             </div>
-            <Button className="text-white font-semibold leading-6 h-[52px] w-[187px] bg-[#352CAB] rounded-full mt-6 ">
-              Get Demo
+            <Button
+              onClick={setOpen}
+              className="text-white font-semibold leading-6 h-[52px] w-[187px] bg-[#352CAB] hover:bg-primary hover:opacity-75 rounded-full mt-6 "
+            >
+              Get A Quote
             </Button>
           </div>
           <div className=" h-[450px] rounded-2xl-300 col-span-3 md:w-[654px] ">

@@ -1,62 +1,75 @@
 import { Check } from 'lucide-react';
 import MaxWidthWrapper from './max-width-wrapper';
 import { Button } from './ui/button';
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
+import { pricingData } from '@/mock-data/pricing-data';
+import HocScroll from '@/hoc/hoc-scroll';
 
 const Pricing = () => {
+  const [current, setCurrent] = useState('basic');
+
+  const pricingFeatures = pricingData.find((pricing) => pricing.title === current);
+
   return (
-    <div className="w-full h-full py-4 md:py-0 md:h-[880px] bg-[#F5F4FB] ">
+    <div className="w-full h-full py-4 md:py-8 md:min-h-[880px] bg-[#F5F4FB] ">
       <MaxWidthWrapper className="flex items-center justify-center h-full ">
-        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 ml-7">
-          <div className="h-[640px] flex flex-col w-full justify-between items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 ml-3">
+          <div className="h-full flex flex-col w-full space-y-10 items-start">
             <div className=" flex flex-col items-start h-[162px]">
               <h5 className="text-xl font-semibold text-[#352CAB] leading-[30px]">Pricing you can trust</h5>
-              <h2 className="text-[40px] font-bold leading-[60px] text-[#0D121F] my-2  w-4/6">
+              <h2 className="text-clamp4xl font-bold leading-[60px] text-[#0D121F] my-2  w-4/6">
                 Transparent pricing All day, everyday
               </h2>
             </div>
-            <div className="flex flex-col gap-9 h-[414px] max-w-[540px]">
-              <div className="w-full h-12 mt-2 md:mt-0 md:h-14 bg-[#DCDBEE] rounded-full flex">
-                <Button className="h-full w-[33.7%] bg-transparent text-[#352CAB] text-base pointer-events-none">
+            <div className="flex flex-col gap-9  max-w-[560px] w-full">
+              <div className="border w-full h-12 mt-9 md:mt-0 md:h-14 bg-[#DCDBEE] outline-none rounded-full flex">
+                <Button
+                  onClick={() => setCurrent('basic')}
+                  className={cn(
+                    'h-full w-[33.7%] bg-transparent ring-0 hover:text-violet-500 text-[#352CAB] text-base cursor-pointer',
+                    {
+                      'bg-primary rounded-full text-white pointer-events-none': current === 'basic'
+                    }
+                  )}
+                >
                   Basic
                 </Button>
-                <Button className="h-full w-[33.7%] bg-transparent text-[#352CAB] text-base pointer-events-none">
+                <Button
+                  onClick={() => setCurrent('standard')}
+                  className={cn(
+                    'h-full   w-[33.7%] bg-transparent ring-0 hover:text-violet-500 text-[#352CAB] text-base cursor-pointer',
+                    {
+                      'bg-primary rounded-full text-white pointer-events-none': current === 'standard'
+                    }
+                  )}
+                >
                   Standard
                 </Button>
-                <Button className="h-full w-[33.7%] rounded-full text-white text-base pointer-events-none font-semibold leading-6">
+                <Button
+                  onClick={() => setCurrent('premium')}
+                  className={cn(
+                    'h-full  w-[33.7%] bg-transparent ring-0 hover:text-violet-500 text-[#352CAB] text-base cursor-pointer',
+                    {
+                      'bg-primary rounded-full text-white pointer-events-none': current === 'premium'
+                    }
+                  )}
+                >
                   Premium
                 </Button>
               </div>
               <p className="text-2xl font-bold leading-9 text-[#0D121F]">
                 Tailored for large schools or institutions with complex needs.
               </p>
-              <div className="flex flex-col mt-0 gap-9 ">
-                <div className="flex items-center space-x-3">
-                  <span className="h-6 w-6 rounded-full bg-[#352CAB] justify-center items-center">
-                    <Check className="h-4 w-4 text-white mx-auto mt-1 font-semibold" />
-                  </span>
-                  <p className="text-lg font-[500] leading-[27px] text-[#596780]">
-                    All features of the Standard Plan, plus:
-                  </p>
-                </div>
-
-                <div className="flex items-center space-x-3">
-                  <span className="h-6 w-6 rounded-full bg-[#352CAB] justify-center items-center">
-                    <Check className="h-4 w-4 text-white mx-auto mt-1 font-semibold" />
-                  </span>
-                  <p className="text-lg font-[500] leading-[27px] text-[#596780]">Customizable solutions</p>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="h-6 w-6 rounded-full bg-[#352CAB] justify-center items-center">
-                    <Check className="h-4 w-4 text-white mx-auto mt-1 font-semibold" />
-                  </span>
-                  <p className="text-lg font-[500] leading-[27px] text-[#596780]">Priority support</p>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <span className="h-6 w-6 rounded-full bg-[#352CAB] justify-center items-center">
-                    <Check className="h-4 w-4 text-white mx-auto mt-1 font-semibold" />
-                  </span>
-                  <p className="text-lg font-[500] leading-[27px] text-[#596780]">Dedicated account manager</p>
-                </div>
+              <div className="flex flex-col mt-0 gap-6 ">
+                {pricingFeatures?.features?.map((feature, index) => (
+                  <div key={index} className="flex items-center space-x-5 w-full">
+                    <span className="h-7 w-7 rounded-[14px] bg-[#352CAB] justify-center items-center">
+                      <Check className="h-4 w-4 text-white mx-auto mt-1 font-semibold" />
+                    </span>
+                    <p className="text-lg w-[540px] text-wrap font-[500] leading-[27px] text-[#596780]">{feature}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -68,18 +81,18 @@ const Pricing = () => {
                     Popular
                   </Button>
                   <div>
-                    <h1 className="text-6xl font-semibold leading-[72px] text-[#0D121F]">
-                      $499
+                    <h1 className="text-6xl font-semibold leading-[72px] text-[#0D121F] pt-3">
+                      {pricingFeatures?.price}
                       <span className="text-base font-[500] leading-6 text-[#596780]"> per month</span>
                     </h1>
                   </div>
                 </div>
 
                 <div className="flex flex-col w-full space-y-3">
-                  <Button className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-white bg-[#352CAB]">
+                  <Button className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-white bg-[#352CAB] hover:border hover:border-primary  hover:text-[#352CAB]">
                     Get started
                   </Button>
-                  <Button className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-[#352CAB] bg-[#DCDBEE]">
+                  <Button className="h-12 max-w-[422px] text-base font-semibold rounded-md leading-6 text-[#352CAB] bg-[#DCDBEE] hover:border hover:border-primary">
                     Chat to sales
                   </Button>
                 </div>
@@ -92,4 +105,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing;
+export default HocScroll(Pricing, 'pricing');
