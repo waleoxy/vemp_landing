@@ -12,9 +12,7 @@ const HocScroll = (Component: FC, idName: string) =>
         viewport={{ once: true, amount: 0.25 }}
         className={``}
       >
-        <span id={idName} className="">
-          &nbsp;
-        </span>
+        <span id={idName} className=""></span>
         <Component />
       </motion.section>
     );

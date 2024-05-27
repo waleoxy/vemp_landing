@@ -9,7 +9,7 @@ const HowItWorksPg = () => {
   const isInView = useInView(ref);
 
   return (
-    <div ref={ref} className="overflow-x-hidden w-full h-full md:h-[788px] bg-[#F5F4FB] ">
+    <div ref={ref} className="overflow-x-hidden w-full h-full md:h-[788px] bg-[#F5F4FB] mb-0">
       <MaxWidthWrapper className="flex mt-3 md:mt-0 md:items-center md:justify-center h-full ">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-10 md:gap-12">
           <div

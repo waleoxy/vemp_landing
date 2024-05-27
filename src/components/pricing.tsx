@@ -13,7 +13,7 @@ const Pricing = () => {
   const pricingFeatures = pricingData.find((pricing) => pricing.title === current);
 
   return (
-    <div className="w-full h-full py-4 md:py-8 md:min-h-[880px] bg-[#F5F4FB] ">
+    <div className="w-full h-full py-4 md:py-8 md:min-h-[880px] bg-[#F5F4FB]">
       <MaxWidthWrapper className="flex items-center justify-center h-full ">
         <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-12 ml-3">
           <div className="h-full flex flex-col w-full space-y-10 items-start">
@@ -74,7 +74,7 @@ const Pricing = () => {
               </div>
             </div>
           </div>
-          <div className="h-[380px] max-w-[486px] w-full ml-0 md:ml-6 my-auto ">
+          <div className="h-[380px] max-w-[486px] w-full ml-0 md:ml-6 my-auto shadow-md ">
             <div className="h-full  flex items-center  bg-white rounded-2xl">
               <div className="flex flex-col px-8 items-start w-full h-full justify-evenly">
                 <div className=" flex flex-col space-y-3 pt-2">
